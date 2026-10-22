@@ -1,0 +1,21 @@
+# Verification only: an addon built outside gpuix-native that registers an
+# element, the way the README describes. Not part of the change.
+[package]
+name = "custom-element-check"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+gpuix-native = { path = "../../packages/native" }
+napi = { version = "3.12.7", features = ["napi8"] }
+napi-derive = "3.6.8"
+serde_json = "1"
+
+[build-dependencies]
+napi-build = "2.4.4"
